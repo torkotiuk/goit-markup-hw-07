@@ -1,0 +1,33 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all 500ms linear;
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 500ms linear 500ms;
+  }
+}
+
+.modal {
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 528px;
+  height: 581px;
+  background-color: #fff;
+  transition: all 500ms linear 500ms;
+
+  .backdrop.is-hidden & {
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 500ms linear 0ms;
+  }
+}
