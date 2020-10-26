@@ -61,6 +61,23 @@ img {
   margin: 0 auto;
 }
 
+.header .container {
+  display: flex;
+  align-items: center;
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
+}
+
+.footer .container {
+  display: flex;
+  align-items: baseline;
+}
+
 .modal-btn,
 .btn-form-submit {
   font-family: var(--main-font);
@@ -144,6 +161,14 @@ img {
   color: var(--title-color);
 }
 
+.work .title {
+  margin-bottom: 50px;
+}
+
+.team .title {
+  margin-bottom: 50px;
+}
+
 .clients .title {
   margin-bottom: 50px;
 }
@@ -158,6 +183,23 @@ img {
 
 .logo-second-color {
   color: var(--accent-color);
+}
+
+.header .logo {
+  margin-right: 93px;
+}
+
+.logo-light-theme-color {
+  color: #000000;
+}
+
+.footer .logo {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.logo-dark-theme-color {
+  color: var(--text-color-white);
 }
 
 .hero,
@@ -329,39 +371,35 @@ img {
   border-bottom: 1px solid #ececec;
 }
 
-.header .container {
-  display: flex;
-  align-items: center;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-}
-
 .nav-list,
 .adress-list {
   display: flex;
 }
 
-.header .adress {
+.adress {
   margin-left: auto;
-}
-
-.header .logo {
-  margin-right: 93px;
-}
-
-.nav-list-li:not(:last-child) {
-  margin-right: 50px;
 }
 
 .adress-list-li:not(:last-child) {
   margin-right: 50px;
 }
 
-.logo-light-theme-color {
-  color: #000000;
+.adress-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  color: var(--adress-header-color);
+}
+
+.adress-list-svg {
+  fill: var(--adress-header-color);
+  margin-right: 10px;
+  transition: fill 250ms var(--timing-function);
+}
+
+.adress-list-link:hover .adress-list-svg {
+  fill: var(--accent-color);
 }
 
 .nav-list-link,
@@ -373,9 +411,29 @@ img {
   transition: color 250ms var(--timing-function);
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list-li:not(:last-child) {
+  margin-right: 50px;
+}
+
 .nav-list-link {
   position: relative;
   color: #212121;
+}
+
+.nav-list-link.current {
+  color: var(--accent-color);
+}
+
+.nav-list-link:hover,
+.nav-list-link:focus,
+.adress-list-link:hover,
+.adress-list-link:focus {
+  color: var(--accent-color);
 }
 
 .current::after {
@@ -390,50 +448,12 @@ img {
   border-radius: 2px;
 }
 
-.adress-list-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-style: normal;
-  color: var(--adress-header-color);
-}
-
-/* --icons-- */
-.adress-list-svg {
-  fill: var(--adress-header-color);
-  margin-right: 10px;
-  transition: fill 250ms var(--timing-function);
-}
-
-.adress-list-link:hover .adress-list-svg {
-  fill: var(--accent-color);
-}
-
-/* --END icons-- */
-.nav-list-link:hover,
-.nav-list-link:focus,
-.adress-list-link:hover,
-.adress-list-link:focus {
-  color: var(--accent-color);
-}
-
-.nav-list-link.current {
-  color: var(--accent-color);
-}
-
 .hero {
   max-width: 1600px;
   height: 600px;
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
-}
-
-.hero .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 600px;
 }
 
 .hero-title {
@@ -463,22 +483,6 @@ img {
   margin-bottom: 30px;
 }
 
-.icon-details::before {
-  background-image: url(../images/features/details.svg);
-}
-
-.icon-clock::before {
-  background-image: url(../images/features/clock.svg);
-}
-
-.icon-diagram::before {
-  background-image: url(../images/features/diagram.svg);
-}
-
-.icon-astronaut::before {
-  background-image: url(../images/features/astronaut.svg);
-}
-
 .features-list-li:not(:last-child) {
   margin-right: 30px;
 }
@@ -502,6 +506,22 @@ img {
   color: var(--description-color);
 }
 
+.icon-details::before {
+  background-image: url(../images/features/details.svg);
+}
+
+.icon-clock::before {
+  background-image: url(../images/features/clock.svg);
+}
+
+.icon-diagram::before {
+  background-image: url(../images/features/diagram.svg);
+}
+
+.icon-astronaut::before {
+  background-image: url(../images/features/astronaut.svg);
+}
+
 .work {
   padding-bottom: 94px;
 }
@@ -512,10 +532,6 @@ img {
 
 .work-list-li:not(:last-child) {
   margin-right: 30px;
-}
-
-.work .title {
-  margin-bottom: 50px;
 }
 
 .work-list-item-wrap {
@@ -544,7 +560,6 @@ img {
 }
 
 .team {
-  /* padding-top: 94px; */
   background: var(--background-section);
 }
 
@@ -552,19 +567,14 @@ img {
   display: flex;
 }
 
-.team-list-li:not(:last-child) {
-  margin-right: 30px;
-}
-
 .team-list-li {
   background: #ffffff;
-  /* material shadow v1 */
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 
-.team .title {
-  margin-bottom: 50px;
+.team-list-li:not(:last-child) {
+  margin-right: 30px;
 }
 
 .team-list-title {
@@ -629,27 +639,8 @@ img {
   padding-bottom: 60px;
 }
 
-.footer .container {
-  display: flex;
-  align-items: baseline;
-}
-
-.footer .logo {
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
 .footer-list-li:not(:last-child) {
   margin-bottom: 9px;
-}
-
-.footer-adress,
-.footer-adress-list-link {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.714;
-  letter-spacing: 0.03em;
 }
 
 .footer-adress {
@@ -660,14 +651,26 @@ img {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.logo-dark-theme-color {
-  color: var(--text-color-white);
+.footer-adress, .footer-adress-list-link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.714;
+  letter-spacing: 0.03em;
 }
 
 .connect-us {
   display: flex;
   flex-direction: column;
   margin-left: 70px;
+}
+
+.connect-us-social-list-link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.connect-us-social-list-svg {
+  fill: #fff;
 }
 
 .title-dark-theme {
@@ -678,14 +681,6 @@ img {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--text-color-white);
-}
-
-.connect-us-social-list-svg {
-  fill: #fff;
-}
-
-.connect-us-social-list-link {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .subscribe-form {

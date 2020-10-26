@@ -1,47 +1,39 @@
 .team {
-  /* padding-top: 94px; */
   background: var(--background-section);
-}
 
-.team-list {
-  display: flex;
-}
+  &-list {
+    display: flex;
 
-.team-list-li:not(:last-child) {
-  margin-right: 30px;
-}
+    &-li {
+      background: #ffffff;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 0px 0px 4px 4px;
+    }
 
-.team-list-li {
-  background: #ffffff;
-  /* material shadow v1 */
+    &-li:not(:last-child) {
+      margin-right: 30px;
+    }
 
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 4px 4px;
-}
+    &-title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.188;
+      text-align: center;
+      letter-spacing: 0.03em;
+      color: var(--title-color);
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
 
-.team .title {
-  margin-bottom: 50px;
-}
+    &-text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.188;
+      text-align: center;
+      letter-spacing: 0.03em;
+      color: var(--description-color);
 
-.team-list-title {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.188;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: var(--title-color);
-
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-.team-list-text {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.188;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: var(--description-color);
-
-  margin-bottom: 30px;
+      margin-bottom: 30px;
+    }
+  }
 }

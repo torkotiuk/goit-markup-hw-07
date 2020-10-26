@@ -4,24 +4,16 @@
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
-}
 
-.hero .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 600px;
-}
-
-.hero-title {
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.364;
-  text-align: center;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-color-white);
-
-  max-width: 696px;
-  margin-top: 200px;
+  &-title {
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.364;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-color-white);
+    max-width: 696px;
+    margin-top: 200px;
+  }
 }

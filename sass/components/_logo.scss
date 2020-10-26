@@ -8,4 +8,21 @@
   &-second-color {
     color: var(--accent-color);
   }
+
+  .header & {
+    margin-right: 93px;
+  }
+
+  &-light-theme-color {
+    color: #000000;
+  }
+
+  .footer & {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  &-dark-theme-color {
+    color: var(--text-color-white);
+  }
 }

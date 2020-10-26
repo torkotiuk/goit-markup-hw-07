@@ -3,39 +3,35 @@
   border-bottom: 1px solid #ececec;
 }
 
-.header .container {
-  display: flex;
-  align-items: center;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-}
-
 .nav-list,
 .adress-list {
   display: flex;
 }
 
-.header .adress {
+.adress {
   margin-left: auto;
-}
 
-.header .logo {
-  margin-right: 93px;
-}
+  &-list-li:not(:last-child) {
+    margin-right: 50px;
+  }
 
-.nav-list-li:not(:last-child) {
-  margin-right: 50px;
-}
+  &-list-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    color: var(--adress-header-color);
+  }
 
-.adress-list-li:not(:last-child) {
-  margin-right: 50px;
-}
+  &-list-svg {
+    fill: var(--adress-header-color);
+    margin-right: 10px;
+    transition: fill 250ms var(--timing-function);
 
-.logo-light-theme-color {
-  color: #000000;
+    .adress-list-link:hover & {
+      fill: var(--accent-color);
+    }
+  }
 }
 
 .nav-list-link,
@@ -44,13 +40,32 @@
   font-size: 14px;
   line-height: 1.143;
   letter-spacing: 0.02em;
-
   transition: color 250ms var(--timing-function);
 }
 
-.nav-list-link {
-  position: relative;
-  color: #212121;
+.nav {
+  display: flex;
+  align-items: center;
+
+  &-list-li:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  &-list-link {
+    position: relative;
+    color: #212121;
+  }
+
+  &-list-link.current {
+    color: var(--accent-color);
+  }
+}
+
+.nav-list-link:hover,
+.nav-list-link:focus,
+.adress-list-link:hover,
+.adress-list-link:focus {
+  color: var(--accent-color);
 }
 
 .current::after {
@@ -63,35 +78,4 @@
   height: 4px;
   background-color: var(--accent-color);
   border-radius: 2px;
-}
-
-.adress-list-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-style: normal;
-  color: var(--adress-header-color);
-}
-
-/* --icons-- */
-.adress-list-svg {
-  fill: var(--adress-header-color);
-  margin-right: 10px;
-  transition: fill 250ms var(--timing-function);
-}
-
-.adress-list-link:hover .adress-list-svg {
-  fill: var(--accent-color);
-}
-/* --END icons-- */
-
-.nav-list-link:hover,
-.nav-list-link:focus,
-.adress-list-link:hover,
-.adress-list-link:focus {
-  color: var(--accent-color);
-}
-
-.nav-list-link.current {
-  color: var(--accent-color);
 }
